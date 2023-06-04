@@ -29,7 +29,7 @@ class _DetailView extends StatelessWidget {
     return SingleChildScrollView(
       child: Column(
         children: [
-          const Text('Título'),
+          const Text('Título2'),
           const SizedBox(
             height: 20,
           ),

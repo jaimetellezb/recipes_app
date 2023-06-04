@@ -5,12 +5,17 @@ import 'package:recipes_app/presentation/screens/screens.dart';
 
 /// app router
 final appRouter = GoRouter(
-  initialLocation: '/',
+  initialLocation: '/home/0',
   routes: [
     GoRoute(
-      path: '/',
+      path: '/home/:page',
       name: HomeScreen.name,
-      builder: (context, state) => const HomeScreen(),
+      builder: (context, state) {
+        final pageIndex = state.pathParameters['page'] ?? '0';
+        return HomeScreen(
+          pageIndex: int.parse(pageIndex),
+        );
+      },
     ),
     GoRoute(
       path: '/new-recipe',
