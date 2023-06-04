@@ -1,4 +1,5 @@
 import 'package:go_router/go_router.dart';
+import 'package:recipes_app/presentation/screens/recipes/recipe_detail_screen.dart';
 import 'package:recipes_app/presentation/screens/recipes/register_screen.dart';
 import 'package:recipes_app/presentation/screens/screens.dart';
 
@@ -15,6 +16,11 @@ final appRouter = GoRouter(
       path: '/new-recipe',
       name: RegisterScreen.name,
       builder: (context, state) => const RegisterScreen(),
+    ),
+    GoRoute(
+      path: '/recipe-detail',
+      name: RecipeDetailScreen.name,
+      builder: (context, state) => const RecipeDetailScreen(),
     ),
   ],
 );

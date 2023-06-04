@@ -38,8 +38,13 @@ class _HomeViewState extends State<_HomeView> {
       ),
       body: ListView.builder(
         itemBuilder: (context, index) {
-          return const ListTile(
-            title: Text('Arroz con pollito'),
+          return ListTile(
+            onTap: () {
+              context.push('/recipe-detail');
+            },
+            title: const Text('Arroz con pollito'),
+            subtitle: const Text('subtitulo'),
+            trailing: const Icon(Icons.accessible_forward_outlined),
           );
         },
       ),
