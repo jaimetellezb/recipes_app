@@ -20,12 +20,14 @@ List<Widget> _barWithBadgeDestinations = [
     selectedIcon: Icon(Icons.favorite),
     // selectedIcon: Badge(label: Text('10'), child: Icon(Icons.chat_bubble)),
   ),
-//  const NavigationDestination(
-//     tooltip: '',
-//     icon: Badge(label: Text('10'), child: Icon(Icons.chat_bubble_outline)),
-//     label: 'Favoritas',
-//     selectedIcon: Badge(label: Text('10'), child: Icon(Icons.chat_bubble)),
-//   ),
+  const NavigationDestination(
+    tooltip: '',
+    icon: Icon(Icons.settings_outlined),
+    // icon: Badge(label: Text('10'), child: Icon(Icons.chat_bubble_outline)),
+    label: 'Ajustes',
+    selectedIcon: Icon(Icons.settings),
+    // selectedIcon: Badge(label: Text('10'), child: Icon(Icons.chat_bubble)),
+  ),
 ];
 
 ///
@@ -42,6 +44,10 @@ class CustomNavigationBar extends StatelessWidget {
         context.go('/home/0');
       case 1:
         context.go('/home/1');
+      case 2:
+        context.go('/home/2');
+      case 3:
+        context.go('/home/3');
     }
   }
 
