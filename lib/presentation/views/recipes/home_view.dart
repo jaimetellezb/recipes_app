@@ -37,7 +37,15 @@ class HomeViewState extends State<HomeView> {
                 children: [
                   WeeklyMenuSlideShow(),
                   RecipeHorizontalListView(
+                    title: 'Categorías',
+                    subTitle: 'Ver todo',
+                  ),
+                  RecipeHorizontalListView(
                     title: 'Sopas',
+                    subTitle: 'Este mes',
+                  ),
+                  RecipeHorizontalListView(
+                    title: 'Postres',
                     subTitle: 'Este mes',
                   ),
                   RecipeHorizontalListView(
@@ -54,25 +62,5 @@ class HomeViewState extends State<HomeView> {
         ),
       ],
     );
-
-    // return ListView.builder(
-    //   itemBuilder: (context, index) {
-    //     final iconData = _isFavorite ? Icons.favorite : Icons.favorite_border;
-    //     return ListTile(
-    //       onTap: () {
-    //         context.push('/recipe-detail');
-    //       },
-    //       title: const Text('Arroz con pollito'),
-    //       subtitle: const Text('subtitulo'),
-    //       trailing: IconButton(
-    //         icon: Icon(iconData),
-    //         onPressed: () {
-    //           _isFavorite = !_isFavorite;
-    //           setState(() {});
-    //         },
-    //       ),
-    //     );
-    //   },
-    // );
   }
 }
