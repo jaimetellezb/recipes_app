@@ -1,4 +1,3 @@
-import 'package:animated_bottom_navigation_bar/animated_bottom_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -30,14 +29,22 @@ List<Widget> _barWithBadgeDestinations = [
     selectedIcon: Icon(Icons.favorite),
     // selectedIcon: Badge(label: Text('10'), child: Icon(Icons.chat_bubble)),
   ),
-  // const NavigationDestination(
-  //   tooltip: '',
-  //   icon: Icon(Icons.settings_outlined),
-  //   // icon: Badge(label: Text('10'), child: Icon(Icons.chat_bubble_outline)),
-  //   label: 'Ajustes',
-  //   selectedIcon: Icon(Icons.settings),
-  //   // selectedIcon: Badge(label: Text('10'), child: Icon(Icons.chat_bubble)),
-  // ),
+  const NavigationDestination(
+    tooltip: '',
+    icon: Icon(Icons.settings_outlined),
+    // icon: Badge(label: Text('10'), child: Icon(Icons.chat_bubble_outline)),
+    label: 'Ajustes',
+    selectedIcon: Icon(Icons.settings),
+    // selectedIcon: Badge(label: Text('10'), child: Icon(Icons.chat_bubble)),
+  ),
+  const NavigationDestination(
+    tooltip: '',
+    icon: Icon(Icons.settings_outlined),
+    // icon: Badge(label: Text('10'), child: Icon(Icons.chat_bubble_outline)),
+    label: 'Ajustes',
+    selectedIcon: Icon(Icons.settings),
+    // selectedIcon: Badge(label: Text('10'), child: Icon(Icons.chat_bubble)),
+  ),
 ];
 
 ///
@@ -63,25 +70,10 @@ class CustomNavigationBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final colors = Theme.of(context).colorScheme;
-    return AnimatedBottomNavigationBar(
-      shadow: const Shadow(
-        color: Colors.black45,
-      ),
-      icons: iconList,
-      activeColor: colors.inversePrimary,
-      splashColor: colors.secondary,
-      inactiveColor: colors.outline,
-      backgroundColor: colors.background,
-      activeIndex: currentIndex,
-      gapLocation: GapLocation.center,
-      notchSmoothness: NotchSmoothness.defaultEdge,
-      hideAnimationCurve: Curves.easeInCirc,
-
-      // leftCornerRadius: 10,
-      iconSize: 25,
-      // rightCornerRadius: 10,
-      onTap: (int index) => _onItemTapped(context, index),
+    return NavigationBar(
+      onDestinationSelected: (int index) => _onItemTapped(context, index),
+      selectedIndex: currentIndex,
+      destinations: _barWithBadgeDestinations,
     );
   }
 }

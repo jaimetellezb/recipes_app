@@ -36,9 +36,8 @@ class HomeViewState extends State<HomeView> {
               return const Column(
                 children: [
                   WeeklyMenuSlideShow(),
-                  RecipeHorizontalListView(
+                  CategoryHorizontalListView(
                     title: 'Categorías',
-                    subTitle: 'Ver todo',
                   ),
                   RecipeHorizontalListView(
                     title: 'Sopas',
