@@ -8,4 +8,7 @@ class Message {
 
   /// título de pantalla de detalle de la receta
   static const String recipeDetailTitle = 'Detalle de la receta';
+
+  /// título de la pantalla para agregar menús
+  static const String registerMenuTitle = 'Menú';
 }

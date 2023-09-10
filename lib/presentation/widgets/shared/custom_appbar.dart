@@ -8,6 +8,7 @@ class CustomAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final titleStyle = Theme.of(context).textTheme.titleMedium;
+    final colors = Theme.of(context).colorScheme;
 
     // * SafeArea
     // lo utilizamos para que no tenga en cuenta los espacios
@@ -27,17 +28,59 @@ class CustomAppBar extends StatelessWidget {
           // Agregamos una Row ya que será para navegación horizontal
           child: Row(
             children: [
-              Text(
-                'Recetas',
-                style: titleStyle,
-              ),
-              //* Spacer
-              // rellena con un espacio entre widgets
-              // para ocupar el ancho completo
-              const Spacer(),
-              IconButton(
-                onPressed: () {},
-                icon: const Icon(Icons.search_outlined),
+              //* Container
+              // Buscador de recetas
+              Expanded(
+                child: Container(
+                  margin: const EdgeInsets.only(left: 20, right: 20),
+                  decoration: BoxDecoration(
+                    boxShadow: [
+                      BoxShadow(
+                        color: colors.onBackground.withOpacity(0.1),
+                        blurRadius: 20,
+                      ),
+                    ],
+                  ),
+                  child: TextField(
+                    decoration: InputDecoration(
+                      filled: true,
+                      fillColor: Colors.white,
+                      contentPadding: const EdgeInsets.all(20),
+                      hintText: 'Buscar receta',
+                      hintStyle: const TextStyle(
+                        color: Color(0xffDDDADA),
+                        fontSize: 14,
+                      ),
+                      prefixIcon: const Padding(
+                        padding: EdgeInsets.all(12),
+                      ),
+                      suffixIcon: SizedBox(
+                        width: 100,
+                        child: IntrinsicHeight(
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            children: [
+                              const VerticalDivider(
+                                color: Colors.black,
+                                indent: 10,
+                                endIndent: 10,
+                                thickness: 0.2,
+                              ),
+                              IconButton(
+                                onPressed: () {},
+                                icon: const Icon(Icons.search_outlined),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(15),
+                        borderSide: BorderSide.none,
+                      ),
+                    ),
+                  ),
+                ),
               ),
             ],
           ),

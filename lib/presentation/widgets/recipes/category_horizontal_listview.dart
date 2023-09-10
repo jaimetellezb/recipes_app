@@ -25,7 +25,7 @@ class _CategoryHorizontalListViewState
     'Pastas',
     'Salsas',
     'Comidas rápidas',
-    'Postres'
+    'Postres',
   ];
   @override
   Widget build(BuildContext context) {
@@ -97,7 +97,7 @@ class _Title extends StatelessWidget {
             ),
           const Spacer(),
           if (subTitle != null)
-            FilledButton.tonal(onPressed: () {}, child: Text(subTitle!))
+            FilledButton.tonal(onPressed: () {}, child: Text(subTitle!)),
         ],
       ),
     );

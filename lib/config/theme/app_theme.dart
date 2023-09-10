@@ -7,6 +7,11 @@ class AppTheme {
         colorScheme: ColorScheme.fromSeed(
           seedColor: const Color(0xFF8D427C),
         ),
+        // textTheme: const TextTheme(
+        //   titleMedium: TextStyle(
+        //     color: Colors.white,
+        //   ),
+        // ),
         useMaterial3: true,
       );
 }

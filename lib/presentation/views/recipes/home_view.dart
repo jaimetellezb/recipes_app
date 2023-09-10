@@ -12,8 +12,6 @@ class HomeView extends StatefulWidget {
 
 ///
 class HomeViewState extends State<HomeView> {
-  final bool _isFavorite = false;
-
   @override
   Widget build(BuildContext context) {
     //* CustomScrollView

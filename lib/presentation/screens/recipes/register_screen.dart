@@ -40,7 +40,7 @@ class _RegisterView extends StatelessWidget {
               _RegisterForm(),
               SizedBox(
                 height: 20,
-              )
+              ),
             ],
           ),
         ),

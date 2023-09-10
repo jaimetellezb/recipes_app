@@ -1,4 +1,5 @@
 import 'package:go_router/go_router.dart';
+import 'package:recipes_app/presentation/screens/menu/register_menu_screen.dart';
 import 'package:recipes_app/presentation/screens/recipes/recipe_detail_screen.dart';
 import 'package:recipes_app/presentation/screens/recipes/register_screen.dart';
 import 'package:recipes_app/presentation/screens/screens.dart';
@@ -26,6 +27,15 @@ final appRouter = GoRouter(
       path: '/recipe-detail',
       name: RecipeDetailScreen.name,
       builder: (context, state) => const RecipeDetailScreen(),
+    ),
+    GoRoute(
+      path: '/menu/:day',
+      name: RegisterMenuScreen.name,
+      builder: (context, state) {
+        return RegisterMenuScreen(
+          day: state.pathParameters['day']!,
+        );
+      },
     ),
   ],
 );

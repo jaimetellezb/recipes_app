@@ -18,7 +18,7 @@ class WeeklyMenuSlideShow extends StatelessWidget {
       'Jueves',
       'Viernes',
       'Sábado',
-      'Domingo'
+      'Domingo',
     ];
 
     //* SizeBox
@@ -68,7 +68,7 @@ class _Slide extends StatelessWidget {
           color: Colors.black45,
           blurRadius: 10,
           offset: Offset(0, 10),
-        )
+        ),
       ],
     );
 

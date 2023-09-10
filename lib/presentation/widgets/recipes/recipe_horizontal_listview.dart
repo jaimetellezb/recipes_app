@@ -67,7 +67,7 @@ class _Slide extends StatelessWidget {
           const SizedBox(
             height: 5,
           ),
-          const Text('Sancocho')
+          const Text('Sancocho'),
         ],
       ),
     );
@@ -97,7 +97,7 @@ class _Title extends StatelessWidget {
             ),
           const Spacer(),
           if (subTitle != null)
-            FilledButton.tonal(onPressed: () {}, child: Text(subTitle!))
+            FilledButton.tonal(onPressed: () {}, child: Text(subTitle!)),
         ],
       ),
     );

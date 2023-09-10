@@ -1,15 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-//
-
-const iconList = <IconData>[
-  Icons.home,
-  Icons.favorite,
-  Icons.brightness_6,
-  Icons.brightness_7,
-];
-
 /// custom navigation bar
 
 List<Widget> _barWithBadgeDestinations = [
@@ -23,18 +14,18 @@ List<Widget> _barWithBadgeDestinations = [
   ),
   const NavigationDestination(
     tooltip: '',
-    icon: Icon(Icons.favorite_border),
+    icon: Icon(Icons.fastfood_outlined),
     // icon: Badge(label: Text('10'), child: Icon(Icons.chat_bubble_outline)),
-    label: 'Favoritas',
-    selectedIcon: Icon(Icons.favorite),
+    label: 'Recetas',
+    selectedIcon: Icon(Icons.fastfood),
     // selectedIcon: Badge(label: Text('10'), child: Icon(Icons.chat_bubble)),
   ),
   const NavigationDestination(
     tooltip: '',
-    icon: Icon(Icons.settings_outlined),
+    icon: Icon(Icons.restaurant_menu_outlined),
     // icon: Badge(label: Text('10'), child: Icon(Icons.chat_bubble_outline)),
-    label: 'Ajustes',
-    selectedIcon: Icon(Icons.settings),
+    label: 'Menús',
+    selectedIcon: Icon(Icons.restaurant),
     // selectedIcon: Badge(label: Text('10'), child: Icon(Icons.chat_bubble)),
   ),
   const NavigationDestination(
