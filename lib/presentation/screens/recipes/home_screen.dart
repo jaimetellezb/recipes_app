@@ -2,46 +2,40 @@
 
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:recipes_app/config/constants/messages.dart';
+import 'package:recipes_app/presentation/views/recipes/menus_view.dart';
+import 'package:recipes_app/presentation/views/recipes/recipes_view.dart';
+import 'package:recipes_app/presentation/views/views.dart';
+import 'package:recipes_app/presentation/widgets/shared/custom_navigation_bar.dart';
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+  const HomeScreen({required this.pageIndex, super.key});
 
   static const String name = 'home-screen';
+  final int pageIndex;
+
+  List<Widget> get viewRoutes => [
+        const HomeView(),
+        const RecipesView(),
+        const MenusView(),
+        const SettingView(),
+      ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: const _HomeView(),
+      body: IndexedStack(
+        index: pageIndex,
+        children: viewRoutes,
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      bottomNavigationBar: CustomNavigationBar(currentIndex: pageIndex),
       floatingActionButton: FloatingActionButton(
-        onPressed: () => context.push('/new-recipe'),
-        child: const Icon(Icons.add),
-      ),
-    );
-  }
-}
-
-class _HomeView extends StatefulWidget {
-  const _HomeView();
-
-  @override
-  State<_HomeView> createState() => _HomeViewState();
-}
-
-class _HomeViewState extends State<_HomeView> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text(Message.homeTitle),
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-      ),
-      body: ListView.builder(
-        itemBuilder: (context, index) {
-          return const ListTile(
-            title: Text('Arroz con pollito'),
-          );
+        shape: const CircleBorder(),
+        elevation: 5,
+        onPressed: () {
+          context.push('/new-recipes');
         },
+        child: const Icon(Icons.add),
       ),
     );
   }
